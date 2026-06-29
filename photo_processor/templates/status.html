@@ -1,0 +1,9 @@
+<h1>Processing Status</h1>
+<p>Status: {{ photo.processed|yesno:"Done!,Processing..." }}</p>
+<img src="{{ photo.image.url }}" width="300">
+
+<script>
+    {% if not photo.processed %}
+        setTimeout(() => { location.reload(); }, 3000);
+    {% endif %}
+</script>
